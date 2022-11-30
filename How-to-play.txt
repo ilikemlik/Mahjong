@@ -1,0 +1,7 @@
+(Actually just to put the flow of the game)
+
+1. the tiles are washed (use random lib to set up the wall)
+2. the players receive their respective tiles
+3. turn based - play until have winning tiles or tie
+    - do we set up rules in how it should be won?
+    

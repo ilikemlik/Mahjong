@@ -1,6 +1,9 @@
 
 import random
 
+import pygame
+from pygame.locals import *
+
 class tile(object):
     def __init__(self, suit, value):
         self.suit = suit
@@ -75,3 +78,27 @@ Tiles.show()
 # P1.draw(Tiles)
 # P1.draw(Tiles)
 # P1.showHand()
+
+
+size = width, height = (500,500)
+
+pygame.init()
+running = True
+# set window size
+screen = pygame.display.set_mode(size)
+# set title
+pygame.display.set_caption("Mahjong")
+# set background colour
+screen.fill((60,220,0))
+pygame.draw.rect(screen,
+(50, 50 ,50),
+(width/2,0, (20), 20))
+# draw graphics
+pygame.display.update()
+
+while running:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            running = False
+
+pygame.quit()

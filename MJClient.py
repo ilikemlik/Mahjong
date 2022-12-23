@@ -6,6 +6,7 @@ import pickle
 pygame.init()
 width = 700
 height = 700
+white = (255,255,255)
 win = pygame.display.set_mode((width,height))
 pygame.display.set_caption("Client")
 clock = pygame.time.Clock()
@@ -15,8 +16,17 @@ tileExample = pygame.image.load('sprites/bamboo/01.png')
 def tile(x,y):
     defaultX = 150
     defaultY = 200
-    TileSizeC = pygame.transform.scale(tileExample, (int(defaultX/2), int(defaultY/2)))
+    pygame.draw.rect(win, white, pygame.Rect(x,y,int(defaultX/3), int(defaultY/3)))
+    TileSizeC = pygame.transform.scale(tileExample, (int(defaultX/3), int(defaultY/3)))
     win.blit(TileSizeC,(x,y))
+
+def fillingSlots():
+    slots = []
+    for i in range(15):
+        #hmmm do i still need slots array?
+        slots.append(int(width/14) * i)
+        tile(int(width/14) * i, height *0.8)
+    #make it the same to the game cards / player's hand
 
 
 finished = False
@@ -29,7 +39,8 @@ while not finished:
 
 
     win.fill((10,240,10))
-    tile(width*0.45, height *0.8)            
+    # tile(width*0.45, height *0.8) 
+    fillingSlots()           
     pygame.display.update()
     clock.tick(60)
 

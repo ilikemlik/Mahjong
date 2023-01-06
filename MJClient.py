@@ -28,20 +28,26 @@ def fillingSlots():
         tile(int(width/14) * i, height *0.8)
     #make it the same to the game cards / player's hand
 
-
-finished = False
-
-while not finished:
-
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            finished = True
-
-
-    win.fill((10,240,10))
-    # tile(width*0.45, height *0.8) 
-    fillingSlots()           
+def redrawWindow():
+    win.fill((20,225,20))
     pygame.display.update()
-    clock.tick(60)
 
-pygame.quit()
+def main():
+
+    finished = False
+    while not finished:
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                finished = True
+
+
+        
+        # tile(width*0.45, height *0.8)       
+        redrawWindow()
+        fillingSlots()
+        clock.tick(60)
+
+    pygame.quit()
+
+main()

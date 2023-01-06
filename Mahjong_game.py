@@ -7,6 +7,28 @@ class Game:
     def __init__(self, id):
         self.ready = False
         self.id = id
+        self.p1turn = False
+        self.p2turn = False
+        self.p3turn = False
+        self.p4turn = False
+        ##thinking of how to store moves: if store the tile as the move/ the same as the dump tiles array
+        self.moves = []
+    
+    def player(self, turn, player):
+        ## making of the turns
+        if player == turn:
+            if player == 1:
+                self.p1turn = True
+                self.p4turn = False
+            if player == 2:
+                self.p2turn = True
+                self.p1turn = False
+            if player == 3:
+                self.p3turn = True
+                self.p2turn = False
+            if player == 4:
+                self.p4turn = True
+                self.p3turn = False
 
     class tile(object):
         def __init__(self, suit, value):
@@ -84,6 +106,9 @@ Tiles.show()
 # P1.showHand()
 
 
+
+
+## this section would be in the client, its just here for testing reasons
 size = width, height = (500,500)
 
 pygame.init()

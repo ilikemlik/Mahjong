@@ -84,7 +84,7 @@ def redrawWindow(win, game, p):
 btns = [Button("Rock", 50, 500, (0,0,0)), Button("Scissors", 250, 500, (255,0,0)), Button("Paper", 450, 500, (0,255,0))]
 def main():
     run = True
-    clock = pygame.time.Clock()
+    clock = pygame.time.Clock() 
     n = Network()
     player = int(n.getP())
     print("You are player", player)
